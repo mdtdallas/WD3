@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <form action="POST" novalidate>
+        <img src="/images/logo.svg" alt="hiking logo" id="logo">
+        <fieldset>
+            <legend>HIKING SIGN UP FORM</legend>
+            <section>
+                <h2>I</h2>
+                <input type="text" id="fName" minlength="2" pattern="[A-Z][a-z]*" placeholder="First Name" required>
+                <label for="fName">First Name</label>
+                <span class="error" id="fNameError" aria-live="polite"></span>
+            </section>
+            <section>
+                <h2>I</h2>
+                <input type="text" id="lName" minlength="2" pattern="[A-Z][a-z]*" placeholder="Last Name" required>
+                <label for="lName">Last Name</label>
+                <span class="error" id="lNameError" aria-live="polite"></span>
+            </section>
+            <section>
+                <h2>I</h2>
+                <input type="email" name="email" id="email" minlength="5" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                <label for="email">Email</label>
+                <span class="error" id="emailError" aria-live="polite"></span>
+            </section>
+            <section>
+                <h2>I</h2>
+                <input type="text" maxlength="10" minlength="9" pattern="[0-9]*" placeholder="Phone" required id="phone">
+                <label for="phone">Phone</label>
+                <span class="error" id="phoneError" aria-live="polite"></span>
+            </section>
+            <section>
+                <h2>I</h2>
+                <input type="date" name="dob" id="dob" max="2003-10-10" placeholder="Date of Birth" required>
+                <label for="dob">Date of Birth</label>
+                <span class="error" id="dobError" aria-live="polite"></span>
+            </section>
+            <section>
+                <h2>I</h2>
+                <input type="file" name="pic" id="pic" accept=".jpg, .png, .jpeg, .gif" onchange="return fileValidation()" required>
+                <label for="pic">Profile Picture</label>
+                <div id="imagePreview"></div>
+                <span class="error" id="photoError" aria-live="polite"></span>
+            </section>
+            <section>
+                <h2>I</h2>
+                <input type="password" name="pass" id="pass" minlength="8" maxlength="16" placeholder="Password" pattern="(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}" required>
+                <label for="pass">Password</label>
+                <span class="error" id="passError" aria-live="polite"></span>
+                <img src="/images/icons8-hide-30.png" id="icon" alt="" class="showPassBtn" hidden onclick="showPass()">
+                <img src="/images/view.png" alt="" id="icon2" class="showPassBtn" onclick="showPass()">
+            </section>
+            <section>
+                <h2>I</h2>
+                <input type="password" name="passMatch" id="passMatch" minlength="8" maxlength="16" placeholder="Retype password" pattern="(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}" required>
+                <label for="passMatch">Re-Type Password</label>
+                <span class="error" id="passMatchError" aria-live="polite"></span>
+                <img src="/images/icons8-hide-30.png" id="icon3" alt="" class="showPassBtn2" hidden onclick="showPass2()">
+                <img src="/images/view.png" alt="" id="icon4" class="showPassBtn2" onclick="showPass2()">
+            </section>
+            <section>
+                <h2>I</h2>
+                <select name="subscription" id="subscription" required>
+                    <option value="">-- Select --</option>
+                    <option value="yes">Yes Please</option>
+                    <option value="no">I don't want your spam</option>
+                </select>
+                <label for="subscription" id="subId">Subscribe to newsletter</label>
+                <span class="error" id="subError" aria-live="polite"></span>
+            </section>
+            <section id="agreeDiv">
+                <h2>I</h2>
+                <input type="checkbox" name="agree" id="agree" required onclick="terms_changed(this)">
+                <label for="agree" id="agreeLabel">Agree to terms and conditions</label>
+                <input type="submit" value="Submit" id="submit" class="submit" disabled>
+                <span class="hoverText" id="hoverText">You must agree to the terms and conditions</span>
+                <a href="#">Help</a>
+                <video src="/images/woman.mp4" autoplay loop></video>
+            </section>
+        </fieldset>
+    </form>
+</body>
+</html>
+
+
+        
